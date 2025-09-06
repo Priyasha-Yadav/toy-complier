@@ -1,0 +1,108 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+
+/* Custom Coffee-Style Theme */
+:root {
+  /* Dark Theme (Espresso) */
+  --coffee-dark-bg: #3C2F2F; /* Espresso brown */
+  --coffee-dark-secondary: #4A3728; /* Dark mocha */
+  --coffee-dark-text: #E8D8C4; /* Cream */
+  --coffee-dark-accent: #92765A; /* Gold */
+  --coffee-dark-border: #5A4636; /* Medium mocha */
+  --coffee-dark-hover: #6B543B; /* Lighter mocha for hover */
+
+  /* Light Theme (Latte) */
+ --coffee-light-bg: #FCF7F0;        /* Soft cream, main background */
+  --coffee-light-secondary: #F1E6D8; /* Gentle mocha for panels/sidebar */
+  --coffee-light-text: #4B3B2A;      /* Warm espresso brown for text */
+  --coffee-light-accent: #D2A679;    /* Light caramel for buttons/highlights */
+  --coffee-light-border: #E6DCD0;    /* Soft beige for borders/dividers */
+  --coffee-light-hover: #F7EDE2;     /* Subtle hover highlight */
+}
+
+/* Base styles for dark theme */
+.dark {
+  --bg-primary: var(--coffee-dark-bg);
+  --bg-secondary: var(--coffee-dark-secondary);
+  --text-primary: var(--coffee-dark-text);
+  --accent: var(--coffee-dark-accent);
+  --border: var(--coffee-dark-border);
+  --hover: var(--coffee-dark-hover);
+}
+
+/* Base styles for light theme */
+.light {
+  --bg-primary: var(--coffee-light-bg);
+  --bg-secondary: var(--coffee-light-secondary);
+  --text-primary: var(--coffee-light-text);
+  --accent: var(--coffee-light-accent);
+  --border: var(--coffee-light-border);
+  --hover: var(--coffee-light-hover);
+}
+
+/* Global styles */
+body {
+  @apply font-sans bg-[var(--bg-primary)] text-[var(--text-primary)];
+}
+
+/* Code editor styles */
+.code-editor textarea {
+  @apply bg-[var(--bg-primary)] text-[var(--text-primary)] font-mono text-sm p-4 border-none resize-none outline-none;
+}
+
+/* Line numbers */
+.line-numbers {
+  @apply bg-[var(--bg-secondary)] text-gray-400 border-r border-[var(--border)];
+}
+
+/* Error line highlighting */
+.errorLine {
+  @apply bg-red-500/20;
+}
+
+/* Button styles */
+.btn {
+  @apply flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors font-medium text-sm;
+}
+
+.btn-primary {
+  @apply bg-[var(--accent)] text-white hover:bg-[var(--hover)];
+}
+
+.btn-secondary {
+  @apply bg-[var(--bg-secondary)] text-[var(--text-primary)] hover:bg-[var(--hover)];
+}
+
+/* Header gradient */
+.header {
+  @apply bg-gradient-to-r from-[#4A3728] to-[#8B6F47] shadow-lg;
+}
+
+/* Sidebar styles */
+.sidebar {
+  @apply w-64 bg-[var(--bg-secondary)] border-r border-[var(--border)] shadow-lg;
+}
+
+/* Output panel */
+.output-panel {
+  @apply w-96 bg-[var(--bg-secondary)] border-l border-[var(--border)];
+}
+
+/* Toolbar */
+.toolbar {
+  @apply bg-[var(--bg-secondary)] border-b border-[var(--border)];
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: rgba(60, 47, 47, 0.2);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(212, 160, 23, 0.7);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(212, 160, 23, 1);
+}
